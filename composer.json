@@ -1,0 +1,9 @@
+{
+  "name" : "quack/google-customer-reviews",
+  "description" : "Magento integration for Google Customer Reviews.",
+  "version" : "0.0.1",
+  "repositories" : [ {
+    "type" : "composer",
+    "url" : "https://packagist.org/"
+  } ]
+}

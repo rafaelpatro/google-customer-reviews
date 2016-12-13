@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <google>
+            <groups>
+                <reviews translate="label">
+                    <label>Google Reviews</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                        <account translate="label">
+                            <label>Account Number</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Your Merchant Center ID. You can get this value from the Google Merchant Center.</comment>
+                        </account>
+                        <estimated_delivery_time translate="label">
+                            <label>Estimated Delivery Time (or pattern)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </estimated_delivery_time>
+                        <country_code translate="label">
+                            <label>Country</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>The two-letter country code for the customer's country. This value must be in ISO 3166-1 alpha-2 format. For example, "US".</comment>
+                        </country_code>
+                    </fields>
+                </reviews>
+            </groups>
+        </google>
+    </sections>
+</config>

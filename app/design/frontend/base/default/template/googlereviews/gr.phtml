@@ -1,0 +1,8 @@
+<?php
+$_helper = $this->helper('googlereviews');
+$_accountId = $_helper->getAccountId();
+?>
+<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+<script>
+	<?php echo $this->_getOrdersReviews() ?>
+</script>

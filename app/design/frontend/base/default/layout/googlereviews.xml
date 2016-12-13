@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head" before="-">
+            <block type="googlereviews/gr" name="google_reviews" as="google_reviews" template="googlereviews/gr.phtml" />
+        </reference>
+    </default>
+</layout>
