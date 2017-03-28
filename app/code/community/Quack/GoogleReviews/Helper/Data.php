@@ -38,7 +38,7 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
         $_pattern = $this->getEstimatedDeliveryTime();
         $_time = empty($_pattern) ? 0 : $_pattern;
         if ( !is_numeric($_time) ) {
-            if ( preg_match($_pattern, $order->getShippingDescription(), $matches) ) {
+            if ( preg_match($_pattern, $order->getShippingDescription(), $matches, PREG_OFFSET_CAPTURE) ) {
                 $_time = (int)$matches[1][0];
             }
         }
