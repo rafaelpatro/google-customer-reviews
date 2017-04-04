@@ -41,6 +41,7 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
             if ( preg_match($_pattern, $order->getShippingDescription(), $matches, PREG_OFFSET_CAPTURE) ) {
                 $_time = (int)$matches[1][0];
             }
+            $_time = is_numeric($_time) ? $_time : 0;
         }
         $_estimatedDate = new DateTime();
         $_estimatedDate->add(new DateInterval("P{$_time}D"));
