@@ -41,7 +41,7 @@ class Quack_GoogleReviews_Block_Gr extends Mage_Core_Block_Template
                 Mage::helper('googlereviews')->getAccountId(),
                 $order->getIncrementId(),
                 $order->getCustomerEmail(),
-                Mage::helper('googlereviews')->getDeliveryCountryCode(),
+                Mage::helper('googlereviews')->getDeliveryCountryCode($order),
                 Mage::helper('googlereviews')->getEstimatedDeliveryDate($order)
             );
         }
