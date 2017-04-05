@@ -44,7 +44,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <comment>The two-letter country code for the customer's country. This value must be in ISO 3166-1 alpha-2 format. For example, "US".</comment>
+                            <comment>The two-letter country code for the customer's default country (applied only when order address has no country.). This value must be in ISO 3166-1 alpha-2 format. For example, "US".</comment>
                         </country_code>
                     </fields>
                 </reviews>

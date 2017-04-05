@@ -53,8 +53,21 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::getStoreConfigFlag(self::XML_PATH_ENABLED, $store);
     }
     
-    public function getDeliveryCountryCode($store = null)
+    /**
+     *
+     * @param Mage_Sales_Model_Order $order
+     * @param int $store
+     *
+     * @return string
+     */
+    public function getDeliveryCountryCode($order, $store = null)
     {
-        return Mage::getStoreConfig(self::XML_PATH_COUNTRY_CODE, $store);
+        $country = Mage::getStoreConfig(self::XML_PATH_COUNTRY_CODE, $store);
+        if ($order->getShippingAddress() && $order->getShippingAddress()->getCountryId()) {
+            $country = $order->getShippingAddress()->getCountryId();
+        } elseif ($order->getBillingAddress() && $order->getBillingAddress()->getCountryId()) {
+            $country = $order->getBillingAddress()->getCountryId();
+        }
+        return $country;
     }
 }
