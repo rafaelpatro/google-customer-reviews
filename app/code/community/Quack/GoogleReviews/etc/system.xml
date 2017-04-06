@@ -30,13 +30,22 @@
                             <comment>Your Merchant Center ID. You can get this value from the Google Merchant Center.</comment>
                         </account>
                         <estimated_delivery_time translate="label">
-                            <label>Estimated Delivery Time (or pattern)</label>
+                            <label>Estimated Delivery Time</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>30</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </estimated_delivery_time>
+                        <estimated_delivery_pattern translate="label">
+                            <label>Estimated Delivery Time (Pattern)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Regular Expression to load the delivery time from shipping description. If no matches is found "Estimated Delivery Time" is applied.</comment>
+                        </estimated_delivery_pattern>
                         <country_code translate="label">
                             <label>Country</label>
                             <frontend_type>text</frontend_type>

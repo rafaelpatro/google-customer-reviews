@@ -58,7 +58,8 @@
 	    	<reviews>
 	    		<active>1</active>
 	    		<account>1234567</account>
-	    		<estimated_delivery_time>/([0-9]+) days/</estimated_delivery_time>
+	    		<estimated_delivery_time>7</estimated_delivery_time>
+	    		<estimated_delivery_pattern>/([0-9]+) days/</estimated_delivery_pattern>
 	    		<country_code>US</country_code>
 	    	</reviews>
 	    </google>

@@ -11,6 +11,8 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
     
     const XML_PATH_ESTIMATED_DELIVERY_TIME = 'google/reviews/estimated_delivery_time';
     
+    const XML_PATH_ESTIMATED_DELIVERY_PATTERN = 'google/reviews/estimated_delivery_pattern';
+    
     /**
      * Get Google Merchant account id
      *
@@ -26,6 +28,11 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return Mage::getStoreConfig(self::XML_PATH_ESTIMATED_DELIVERY_TIME, $store);
     }
+
+    public function getEstimatedDeliveryPattern($store = null)
+    {
+        return Mage::getStoreConfig(self::XML_PATH_ESTIMATED_DELIVERY_PATTERN, $store);
+    }
     
     /**
      * 
@@ -35,14 +42,14 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function getEstimatedDeliveryDate($order)
     {
-        $_pattern = $this->getEstimatedDeliveryTime();
-        $_time = empty($_pattern) ? 0 : $_pattern;
-        if ( !is_numeric($_time) ) {
+        $_time = $this->getEstimatedDeliveryTime();
+        $_pattern = $this->getEstimatedDeliveryPattern();
+        if ( !empty($_pattern) ) {
             if ( preg_match($_pattern, $order->getShippingDescription(), $matches, PREG_OFFSET_CAPTURE) ) {
                 $_time = (int)$matches[1][0];
             }
-            $_time = is_numeric($_time) ? $_time : 0;
         }
+        $_time = is_numeric($_time) ? $_time : 0;
         $_estimatedDate = new DateTime();
         $_estimatedDate->add(new DateInterval("P{$_time}D"));
         return $_estimatedDate->format('Y-m-d');
