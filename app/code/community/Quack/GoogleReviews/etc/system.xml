@@ -55,6 +55,15 @@
                             <show_in_store>1</show_in_store>
                             <comment>The two-letter country code for the customer's default country (applied only when order address has no country.). This value must be in ISO 3166-1 alpha-2 format. For example, "US".</comment>
                         </country_code>
+                        <attribute_gtin translate="label">
+                            <label>GTIN Attribute</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>GTIN attribute code for Product Reviews (optional).</comment>
+                        </attribute_gtin>
                     </fields>
                 </reviews>
             </groups>

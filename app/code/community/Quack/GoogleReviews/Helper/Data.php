@@ -13,6 +13,8 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
     
     const XML_PATH_ESTIMATED_DELIVERY_PATTERN = 'google/reviews/estimated_delivery_pattern';
     
+    const XML_PATH_ATTRIBUTE_GTIN = 'google/reviews/attribute_gtin';
+    
     /**
      * Get Google Merchant account id
      *
@@ -32,6 +34,11 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
     public function getEstimatedDeliveryPattern($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_ESTIMATED_DELIVERY_PATTERN, $store);
+    }
+    
+    public function getAttributeGtin($store = null)
+    {
+        return Mage::getStoreConfig(self::XML_PATH_ATTRIBUTE_GTIN, $store);
     }
     
     /**
@@ -76,5 +83,18 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
             $country = $order->getBillingAddress()->getCountryId();
         }
         return $country;
+    }
+    
+    public function getProductsGtin($order, $store = null)
+    {
+        $response = array();
+        foreach ($order->getAllItems() as $item) {
+            if ($data = $item->getProduct()->getData($this->getAttributeGtin($store))) {
+                if ($gtin = preg_replace('/\D/', '', $data)) {
+                    $response[] = sprintf('{"gtin":"%s"}', $gtin);
+                }
+            }
+        }
+        return implode(", ", $response);
     }
 }
