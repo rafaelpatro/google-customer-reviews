@@ -36,13 +36,15 @@ class Quack_GoogleReviews_Block_Gr extends Mage_Core_Block_Template
                     "order_id": "%s",
                     "email": "%s",
                     "delivery_country": "%s",
-                    "estimated_delivery_date": "%s"
+                    "estimated_delivery_date": "%s",
+                    "products": [%s]
                 });',
                 Mage::helper('googlereviews')->getAccountId(),
                 $order->getIncrementId(),
                 $order->getCustomerEmail(),
                 Mage::helper('googlereviews')->getDeliveryCountryCode($order),
-                Mage::helper('googlereviews')->getEstimatedDeliveryDate($order)
+                Mage::helper('googlereviews')->getEstimatedDeliveryDate($order),
+                Mage::helper('googlereviews')->getProductsGtin($order)
             );
         }
         $result[] = '});}';
