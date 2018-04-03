@@ -61,6 +61,7 @@
 	    		<estimated_delivery_time>7</estimated_delivery_time>
 	    		<estimated_delivery_pattern>/([0-9]+) days/</estimated_delivery_pattern>
 	    		<country_code>US</country_code>
+			<badge>1</badge>
 	    		<attribute_gtin>gtin</attribute_gtin>
 	    	</reviews>
 	    </google>

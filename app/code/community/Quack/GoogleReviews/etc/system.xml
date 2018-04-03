@@ -28,6 +28,9 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment>Your Merchant Center ID. You can get this value from the Google Merchant Center.</comment>
+                            <depends>
+                                <active>1</active>
+                            </depends>
                         </account>
                         <estimated_delivery_time translate="label">
                             <label>Estimated Delivery Time</label>
@@ -36,6 +39,9 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <depends>
+                                <active>1</active>
+                            </depends>
                         </estimated_delivery_time>
                         <estimated_delivery_pattern translate="label">
                             <label>Estimated Delivery Time (Pattern)</label>
@@ -45,6 +51,9 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment>Regular Expression to load the delivery time from shipping description. If no matches is found "Estimated Delivery Time" is applied.</comment>
+                            <depends>
+                                <active>1</active>
+                            </depends>
                         </estimated_delivery_pattern>
                         <country_code translate="label">
                             <label>Country</label>
@@ -54,15 +63,34 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment>The two-letter country code for the customer's default country (applied only when order address has no country.). This value must be in ISO 3166-1 alpha-2 format. For example, "US".</comment>
+                            <depends>
+                                <active>1</active>
+                            </depends>
                         </country_code>
-                        <attribute_gtin translate="label">
-                            <label>GTIN Attribute</label>
-                            <frontend_type>text</frontend_type>
+                        <badge translate="label">
+                            <label>Enable Google Reviews Badge</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>45</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <comment>Show badge on frontend</comment>
+                            <depends>
+                                <active>1</active>
+                            </depends>
+                        </badge>
+                        <attribute_gtin translate="label">
+                            <label>GTIN Attribute</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                             <comment>GTIN attribute code for Product Reviews (optional).</comment>
+                            <depends>
+                                <active>1</active>
+                            </depends>
                         </attribute_gtin>
                     </fields>
                 </reviews>
