@@ -12,6 +12,8 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
     const XML_PATH_ESTIMATED_DELIVERY_TIME = 'google/reviews/estimated_delivery_time';
     
     const XML_PATH_ESTIMATED_DELIVERY_PATTERN = 'google/reviews/estimated_delivery_pattern';
+
+    const XML_PATH_BADGE_VISIBLE = 'google/reviews/badge';
     
     const XML_PATH_ATTRIBUTE_GTIN = 'google/reviews/attribute_gtin';
     
@@ -65,6 +67,11 @@ class Quack_GoogleReviews_Helper_Data extends Mage_Core_Helper_Abstract
     public function isGoogleReviewsAvailable($store = null)
     {
         return Mage::getStoreConfigFlag(self::XML_PATH_ENABLED, $store);
+    }
+
+    public function isGoogleReviewsBadgeVisible($store = null)
+    {
+        return Mage::getStoreConfigFlag(self::XML_PATH_BADGE_VISIBLE, $store);
     }
     
     /**
