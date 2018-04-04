@@ -11,7 +11,7 @@ $_position = $_helper->getBadgePosition();
         window.gapi.load('ratingbadge', function() {
             window.gapi.ratingbadge.render(ratingBadgeContainer, {
                 "merchant_id": <?php echo $_accountId ?>,
-                "position": "BOTTOM_LEFT"
+                "position": "<?php echo $_position ?>"
             });
         });
     }
