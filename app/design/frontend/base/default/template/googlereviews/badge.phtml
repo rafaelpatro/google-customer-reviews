@@ -1,6 +1,7 @@
 <?php
 $_helper = $this->helper('googlereviews');
 $_accountId = $_helper->getAccountId();
+$_position = $_helper->getBadgePosition();
 ?>
 <script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
 <script>
@@ -8,7 +9,10 @@ $_accountId = $_helper->getAccountId();
         var ratingBadgeContainer = document.createElement("div");
         document.body.appendChild(ratingBadgeContainer);
         window.gapi.load('ratingbadge', function() {
-            window.gapi.ratingbadge.render(ratingBadgeContainer, {"merchant_id": <?php echo $_accountId ?>});
+            window.gapi.ratingbadge.render(ratingBadgeContainer, {
+                "merchant_id": <?php echo $_accountId ?>,
+                "position": "BOTTOM_LEFT"
+            });
         });
     }
 </script>

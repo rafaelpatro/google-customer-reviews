@@ -80,6 +80,18 @@
                                 <active>1</active>
                             </depends>
                         </badge>
+                        <badge_position translate="label">
+                            <label>Where should the badge appear?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>googlereviews/badgepositions</source_model>
+                            <sort_order>47</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <badge>1</badge>
+                            </depends>
+                        </badge_position>
                         <attribute_gtin translate="label">
                             <label>GTIN Attribute</label>
                             <frontend_type>text</frontend_type>
