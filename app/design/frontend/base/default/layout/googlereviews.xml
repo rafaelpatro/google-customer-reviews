@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
     <default>
-        <reference name="footer">
+        <reference name="before_body_end">
             <block type="googlereviews/badge" name="google_reviews_badge" as="google_reviews_badge" template="googlereviews/badge.phtml"/>
         </reference>
     </default>
@@ -12,7 +12,7 @@
         <update handle="googlereviews_gr"/>
     </checkout_multishipping_success>
     <googlereviews_gr>
-        <reference name="head" before="-">
+        <reference name="before_body_end" before="-">
             <block type="googlereviews/gr" name="google_reviews" as="google_reviews" template="googlereviews/gr.phtml"/>
         </reference>
     </googlereviews_gr>
