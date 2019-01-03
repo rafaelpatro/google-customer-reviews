@@ -1,0 +1,4 @@
+app/code/community/Quack/GoogleReviews/ app/code/community/Quack/GoogleReviews/
+app/design/frontend/base/default/layout/googlereviews.xml app/design/frontend/base/default/layout/googlereviews.xml
+app/design/frontend/base/default/template/googlereviews/ app/design/frontend/base/default/template/googlereviews/
+app/etc/modules/Quack_GoogleReviews.xml app/etc/modules/Quack_GoogleReviews.xml
