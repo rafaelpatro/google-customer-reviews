@@ -1,11 +1,19 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
     <default>
-        <reference name="head" before="-">
-            <block type="googlereviews/gr" name="google_reviews" as="google_reviews" template="googlereviews/gr.phtml"/>
-        </reference>
         <reference name="footer">
             <block type="googlereviews/badge" name="google_reviews_badge" as="google_reviews_badge" template="googlereviews/badge.phtml"/>
         </reference>
     </default>
+    <checkout_onepage_success>
+        <update handle="googlereviews_gr"/>
+    </checkout_onepage_success>
+    <checkout_multishipping_success>
+        <update handle="googlereviews_gr"/>
+    </checkout_multishipping_success>
+    <googlereviews_gr>
+        <reference name="head" before="-">
+            <block type="googlereviews/gr" name="google_reviews" as="google_reviews" template="googlereviews/gr.phtml"/>
+        </reference>
+    </googlereviews_gr>
 </layout>
