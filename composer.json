@@ -1,5 +1,6 @@
 {
   "name" : "quack/google-customer-reviews",
+  "type": "magento-module",
   "description" : "Magento integration for Google Customer Reviews.",
   "version" : "0.0.1",
   "repositories" : [ {
